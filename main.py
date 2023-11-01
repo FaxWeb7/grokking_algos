@@ -196,4 +196,48 @@ O(2^n) и O(n!) - еще медленнее
 
 
 """ -------------- ГЛАВА 7. АЛГОРИТМ ДЕЙКСТРЫ --------------
+Алгоритм дейкстры - алгоритм поиска, работающий с графами. В алгоритме дейкстры каждому сегменту присваивается вес, а сам алгоритм находит путь с наименьшим суммарным весом. 
+При работе с алгоритмом дейкстры с каждым ребром графа связывается число, называемое весом. Граф с весами называется взвешенным графом, граф без весов - невзвешенным графом.
+Использование алгоритма дейкстры с графом, содержащим отрицательные ребра, невозможно.
+"""
+
+
+# # создание взвешенного графа
+# graph = {'start': { 'a': 6, 'b': 2 }, 'a': { 'fin': 1 }, 'b': { 'a': 3, 'fin': 5 }, 'fin': {}} 
+
+# #создание хеш-таблицы стоимостей
+# infinity = float("inf") #бесконечность
+# costs = {'a': 6, 'b': 2, 'fin': infinity}
+
+# #создание хеш-таблицы родителей
+# parents = {'a': 'start', 'b': 'start', 'fin': None}
+
+# #массив для отслеживания уже обработанных узлов, чтобы 1 узел не обрабатывался многократно
+# processed = []
+
+# def find_lowest_cost_node(costs):
+#     lowest_cost = float("inf")
+#     lowest_cost_node = None
+#     for node in costs:
+#         cost = costs[node]
+#         if cost < lowest_cost and node not in processed:
+#             lowest_cost = cost
+#             lowest_cost_node = node
+#     return lowest_cost_node
+
+# node = find_lowest_cost_node(costs)
+# while node != None:
+#     cost = costs[node]
+#     neighbours = graph[node]
+#     for n in neighbours.keys():
+#         new_cost = cost + neighbours[n]
+#         if costs[n] > new_cost:
+#             costs[n] = new_cost
+#             parents[n] = node
+#     processed.append(node)
+#     node = find_lowest_cost_node(costs)
+# print(costs)
+
+
+""" -------------- ГЛАВА 8. ЖАДНЫЕ АЛГОРИТМЫ --------------
 """
