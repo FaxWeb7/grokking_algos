@@ -290,17 +290,49 @@ O(2^n) и O(n!) - еще медленнее
 Кеш — промежуточный буфер с быстрым доступом к нему, содержащий информацию, которая может быть запрошена с наибольшей вероятностью.
 """
 
-from functools import reduce
-arr = [1, 2, 3, 4, 5]
+# from functools import reduce
+# arr = [1, 2, 3, 4, 5]
 
-#map применяет функцию для каждого элемента массива, и в итоге возвращает новый массив
-map_array = list(map(lambda x: x**2, arr))
-print(map_array)
+# #map применяет функцию для каждого элемента массива, и в итоге возвращает новый массив
+# map_array = list(map(lambda x: x**2, arr))
+# print(map_array)
 
-#reduce применяет функцию к парам элементов массива и в итоге возвращает окончательный результат
-reduce_array = reduce(lambda prev_el, el: prev_el + el, arr) 
-print(reduce_array)
+# #reduce применяет функцию к парам элементов массива и в итоге возвращает окончательный результат
+# reduce_array = reduce(lambda prev_el, el: prev_el + el, arr) 
+# print(reduce_array)
 
-#filter проверяет каждый элемент на условие, если элемент его проходит, то он добавляется в новый список, а если не проходит, то не добавляется. filter возвращает новый массив
-filter_array = list(filter(lambda num: num > 2, arr))
-print(filter_array)
+# #filter проверяет каждый элемент на условие, если элемент его проходит, то он добавляется в новый список, а если не проходит, то не добавляется. filter возвращает новый массив
+# filter_array = list(filter(lambda num: num > 2, arr))
+# print(filter_array)
+
+
+""" -------------- СОРТИРОВКА ВСТАВКАМИ, ПУЗЫРЬКОВАЯ СОРТИРОВКА --------------
+Сортировка вставками — алгоритм сортировки, в котором элементы входной последовательности просматриваются по одному, и каждый новый поступивший элемент размещается в подходящее место среди ранее упорядоченных элементов. Скорость - O(n**2)
+сортировка пузырько́м — простой алгоритм сортировки. Для понимания и реализации этот алгоритм — простейший, но эффективен он лишь для небольших массивов. Скорость - O(n**2)
+"""
+
+# def insertion_sort(arr):
+#     for i in range(1, len(arr)):
+#         key = arr[i]
+#         j = i - 1
+#         while j >= 0 and arr[j] > key:
+#             arr[j + 1] = arr[j]
+#             j -= 1
+#         arr[j + 1] = key
+#     return arr
+
+# arr = [64, 25, 12, 22, 11]
+# sorted_arr = insertion_sort(arr)
+# print(sorted_arr)
+
+# def bubble_sort(arr):
+#     n = len(arr)
+#     for i in range(n-1):
+#         for j in range(n-i-1):
+#             if arr[j] > arr[j+1]:
+#                 arr[j], arr[j+1] = arr[j+1], arr[j]
+#     return arr
+
+# arr = [64, 25, 12, 22, 11]
+# sorted_arr = bubble_sort(arr)
+# print(sorted_arr)
